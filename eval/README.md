@@ -33,7 +33,7 @@ results.json` to keep the full per-check results.
 `--only` is the flag for the revise loop: when a full run disagrees on
 two packages, re-run only those two while you adjust your components
 (about $0.20 per package instead of about $4 for a full run), then
-confirm with one full run at the end. Partial runs never print a bar
+run in full again. Partial runs never print a bar
 verdict; only a full 20-package run can pass.
 
 Partial runs also cannot show the category floor, and a revision that
@@ -41,7 +41,7 @@ loosens a check can flip a package that agreed before. So when a
 revision loosens a check, add canaries to the `--only` list: one
 already-agreeing package from each small category the change could
 touch (the 2-package `thread-convention` category is the live case),
-so a flip shows up at $0.20 instead of on your confirming full run.
+so a flip shows up at $0.20 instead of on your next full run.
 The output table's `category` column names each package's category,
 so pick canaries straight from your last full run's table: any row in
 the right category whose `agree` column says `yes`.
@@ -57,11 +57,11 @@ model your course credit is budgeted for.
 
 ## Saving the run you commit
 
-Add `--save-run eval-run.txt` to your confirming full run and the harness
-writes the file for you:
+Add `--save-run eval-run.txt` to every full run and the harness writes
+the file for you, so the file always holds your latest full run:
 
-    python3 run_eval.py --rubric path/to/your-rubric.md \
-        --evidence path/to/your-evidence-guide.md \
+    python3 run_eval.py --rubric ~/.claude/skills/plan-check/rubric.md \
+        --evidence ~/.claude/skills/plan-check/references/evidence-guide.md \
         --save-run eval-run.txt
 
 The file holds the same text you watched on screen, written as UTF-8 on
@@ -73,8 +73,9 @@ Partial runs refuse to write it. A `--limit` or `--only` run says so and
 leaves the file untouched, so a cheap re-run can never overwrite the full
 run you already saved.
 
-Do not hand-edit the file. Where you account for the runs it took to get
-there is your write-up in the phase file, not the transcript.
+Do not hand-edit the file. You account for the runs it took to get
+there in the Run history field of `plan-and-implement.md`, not in the
+transcript.
 
 ## What the output means
 
@@ -88,8 +89,7 @@ One line per package while grading, then a table:
     agreement: 19/20 scored items  (bar: 18/20: PASS)
 
 - `category` is the package's composition category, matching the
-  `categories:` tally line and the Grading tab's composition table
-  (calibration packages show `calib`). This column is where canary
+  `categories:` tally line (calibration packages show `calib`). This column is where canary
   packages come from.
 - `gold` is the instructor label from `gold-labels.json`.
 - `verdict` is what the skill decided with YOUR rubric, evidence
@@ -101,7 +101,7 @@ One line per package while grading, then a table:
   category floor): a rubric that cannot see a whole category, however
   well it does elsewhere, is missing a check the set was built to
   force. The 2-package `thread-convention` category is the live case
-  this week: with only two packages, a rubric with no comms checks
+  in this unit: with only two packages, a rubric with no comms checks
   cannot buy the misses back on volume. Partial runs print the
   tallies for
   just the packages graded, plus a reminder that only a full run
@@ -110,9 +110,8 @@ One line per package while grading, then a table:
 - The agreement line is the score the grading bar reads. The bar:
   agreement of 18 of 20 or better passes (exactly 18 passes), AND the
   category floor holds. The 4 calibration packages are never scored.
-  Full bar details, including the human read of your components: the
-  course portal's Check-In page (`ai301/projects/project_3.md` in this
-  repo).
+  The Unit 3 Assignment tab on the course portal has the points and
+  how the rest of your work is graded.
 
 Disagreements are the feedback loop: open the package the table
 names, reread the plan against the repro evidence, and decide whether
@@ -125,7 +124,7 @@ Each `packages/*.md` file is self-contained: a real issue's context
 (title, body excerpt, thread highlights, and a repo-facts block with
 the repo's stated bug-report template asks and contribution policy,
 including any AI-use policy), a repro-evidence block (the reproduction
-the candidate plan builds on, presented as an accepted week-2-style
+the candidate plan builds on, presented as an accepted unit-2-style
 report excerpt), a candidate plan, and a candidate plan comment, all
 frozen on the capture date stamped at the top. The issue contexts are
 real; every repro report, plan, and comment is instructor-authored, so
@@ -154,6 +153,4 @@ This markdown-plus-manifest layout is the browsable form of the
 eval-set format used in production model evals: one record per item
 with input, gold label, and metadata (usually JSONL), a judge prompt
 (here, the skill plus your rubric, evidence guide, and procedure),
-and a scoring script (here, `run_eval.py`). Third week on the same
-instrument: the judged artifact keeps getting less mechanical, and
-the instrument does not change.
+and a scoring script (here, `run_eval.py`).
