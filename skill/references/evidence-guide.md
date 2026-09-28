@@ -1,8 +1,8 @@
 # Evidence guide: where evidence lives in a plan package
 
 <!--
-THIS IS THE PART YOU WRITE (second week running: the judgment files
-stay in your hands). The skill uses this guide as its map: for every
+THIS IS THE PART YOU WRITE. It's a new guide, not your unit 2 one,
+because a plan's evidence lives in different places. The skill uses this guide as its map: for every
 kind of evidence a rubric check names, this file says WHERE to find it
 in a plan package and WHAT GOOD LOOKS LIKE when you do.
 
@@ -19,10 +19,9 @@ Under each family heading below, write:
   repro evidence actually shows") over adjectives ("diagnosis is
   solid").
 
-A rubric check whose evidence this guide cannot locate is a check
-nobody else can execute, and this week that cuts twice: your
-procedure.md tells the skill WHEN to gather each family, and this
-guide tells it WHERE. Write the map you wish your executor had.
+A rubric check whose evidence this guide can't locate is a check
+nobody else can grade. Your procedure.md tells the skill WHEN to
+gather each family, and this guide tells it WHERE.
 -->
 
 ## Diagnosis and grounding

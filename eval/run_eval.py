@@ -193,7 +193,7 @@ def main() -> int:
                          "the rubric")
     ap.add_argument("--skill", default=str(HERE.parent / "skill"
                                            / "SKILL.md"),
-                    help="path to SKILL.md (default: the week's skill)")
+                    help="path to SKILL.md (default: this repo's skill/SKILL.md)")
     ap.add_argument("--packages", default=str(HERE / "packages"))
     ap.add_argument("--gold", default=str(HERE / "gold-labels.json"))
     ap.add_argument("--include-calibration", action="store_true",
@@ -262,7 +262,7 @@ def main() -> int:
         return 2
     if not doc_has_content(procedure):
         print(f"error: {procedure_p} has no filled-in content. The shipped "
-              "template is stage headings only; this week the skill "
+              "template is stage headings only; the skill "
               "cannot grade without your procedure, and that is by "
               "design. Write the steps, then re-run (--procedure points "
               "at a different copy).", file=sys.stderr)

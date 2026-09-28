@@ -22,7 +22,7 @@ One of:
   plus their issue's URL. Gather the issue-side evidence live (via
   `gh`, the GitHub API, or the web; `references/evidence-guide.md`
   says where each signal lives), and take the reproduction evidence
-  from the student's posted repro comment on that issue (their week-2
+  from the student's posted repro comment on that issue (their unit 2
   proof; the plan must follow from it). A student on the house issue
   has no posted repro comment of their own: there, the reproduction
   evidence is the house repro pack as quoted in the drafts, and if the
@@ -45,8 +45,9 @@ else. It names where the student's issue must live and the house rules
 that apply there; a house rule changes how evidence is read in that
 environment. Refuse to grade a package for an issue outside the scoped
 source. If the scope's repo line still carries an unfilled placeholder,
-stop without grading and tell the student to get their cohort's scope
-file from the instructor; never guess a scope. In eval mode, ignore
+stop without grading and tell the student to replace the placeholder
+on the `Repo:` line of `scope.md` with their Path Review repo; never
+guess a scope. In eval mode, ignore
 `scope.md` entirely.
 
 ## The voice guide gates outgoing words (live mode only)
@@ -75,12 +76,12 @@ looks like there.
 
 ## The procedure is the hands
 
-Weeks 1 and 2, this file told you the workflow. This week it does not:
+In units 1 and 2, this file held the workflow. In unit 3 it does not:
 **execute `procedure.md`**. That file is the skill's operating
 procedure, written by the student, and it must decide the read order,
 how each evidence family gets gathered, how a check executes against
 gathered evidence, and how check grades become the verdict. Follow it
-as written, the same way an executor follows a rubric: exactly,
+as written, the same way a grader follows a rubric: exactly,
 without improvising around gaps. Where the procedure is silent, note
 the gap in your summary rather than silently inventing a step; a
 procedure gap is feedback the student needs.
@@ -89,7 +90,7 @@ If `rubric.md` has no checks filled in, or `procedure.md` has no steps
 filled in, stop and say so: this skill cannot grade without a rubric
 AND a procedure, and that is by design. The rubric, the evidence
 guide, and the procedure are the parts the student writes; the voice
-guide carries over from week 2.
+guide carries over from unit 2.
 
 ## Verdict and output
 
